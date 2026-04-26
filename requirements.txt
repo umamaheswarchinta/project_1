@@ -1,1 +1,1 @@
-polars
+polars==1.40.1
