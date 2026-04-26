@@ -9,5 +9,5 @@ dependencies = [
     "pandas>=2.2.3",
     "streamlit>=1.44.2",
     "yfinance>=0.2.55",
-    
+    "polars==1.40.1"
 ]
