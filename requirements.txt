@@ -1,4 +1,4 @@
 cffi==1.17.1
 streamlit==1.50.0
 pyarrow==24.0.0
-cmake
+
