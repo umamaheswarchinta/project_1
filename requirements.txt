@@ -1,1 +1,12 @@
-
+streamlit
+yfinance
+pandas
+altair
+polars
+plotly
+plotly.express
+matplotlib.pyplot
+plotly.graph_objects
+plotly.subplots
+numpy
+datetime
