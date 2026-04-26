@@ -11,5 +11,5 @@ dependencies = [
     "yfinance>=0.2.55",
     "cffi==1.17.1",
     "pypi==0.1.2",
-    "pyarrow"
+    "pyarrow==24.0.0"
 ]
