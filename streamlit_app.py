@@ -25,7 +25,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
 from datetime import date
-
+import cffi
 
 st.set_page_config(
     page_title="Stock peer analysis dashboard",
