@@ -9,6 +9,6 @@ dependencies = [
     "pandas>=2.2.3",
     "streamlit>=1.44.2",
     "yfinance>=0.2.55",
-    "cffi==1.12.3",
+    "cffi==1.17.1",
     "pypi==0.1.2"
 ]
