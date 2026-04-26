@@ -10,3 +10,4 @@ plotly.graph_objects
 plotly.subplots
 numpy
 datetime
+cffi@1.17.1
