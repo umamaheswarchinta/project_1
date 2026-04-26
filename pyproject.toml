@@ -10,4 +10,5 @@ dependencies = [
     "streamlit>=1.44.2",
     "yfinance>=0.2.55",
     "cffi==1.12.3",
+    "pypi==0.1.2"
 ]
