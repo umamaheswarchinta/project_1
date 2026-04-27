@@ -17,10 +17,6 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 import altair as alt
-import plotly.express as px
-import matplotlib.pyplot as mtpltlb
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import numpy as np
 from datetime import date
 
@@ -171,15 +167,10 @@ with right_cell:
 
     with tab3:
 
-        fig = px.scatter(
-        df_main.to_pandas()[0:10000],
+        fig = st.scatter_chart(
+        df_main[0:10000],
         x='Customer ID',
-        y='Gross Profit',
-        color_discrete_map={
-            'Low': 'green',
-            'Medium': 'yellow',
-            'High': 'red'
-        }
+        y='Gross Profit'
         )
 
         # 3. Render in Streamlit
