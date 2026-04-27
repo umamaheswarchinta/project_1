@@ -17,7 +17,6 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 import altair as alt
-import polars as pl
 import plotly as plt
 import plotly.express as px
 import matplotlib.pyplot as mtpltlb
@@ -25,7 +24,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
 from datetime import date
-import cffi
 
 
 st.set_page_config(
@@ -36,17 +34,17 @@ st.set_page_config(
 
 
 
-df_main = pl.read_csv("my_dataset.csv")
+df_main = pd.read_csv("my_dataset.csv")
 
-df_main_order_date = df_main.get_column("Order Date")
+df_main_order_date = df_main["Order Date"]
 
-df_main_division = df_main.group_by('Division').n_unique()
+df_main_division = df_main['Division'].unique()
 
-df_main_margin_slider_min = df_main.get_column("Gross Margin(%)").min()
+df_main_margin_slider_min = df_main["Gross Margin(%)"].min()
 
-df_main_margin_slider_max = df_main.get_column("Gross Margin(%)").max()
+df_main_margin_slider_max = df_main["Gross Margin(%)"].max()
 
-df_main_product = df_main.group_by("Product Name").n_unique()
+df_main_product = df_main["Product Name"].unique()
 
 """
 # :material/query_stats: Nassau Candy Distributor
@@ -91,24 +89,24 @@ right_cell = cols[1].container(
 )
 
 
-Gross_profit_mean = df_main.get_column("Gross Profit").mean()
+Gross_profit_mean = df_main["Gross Profit"].mean()
 
-Sales_mean = df_main.get_column("Sales").mean()
+Sales_mean = df_main["Sales"].mean()
 
-units = df_main.get_column("Units").mean()
+units = df_main["Units"].mean()
 
 Gross_margin_in_perc = (Gross_profit_mean/Sales_mean) * 100
 
 profit_unit = (Gross_profit_mean/units)
 
-product_sales = df_main.group_by("Product Name").agg(pl.col("Sales").filter(pl.col("Product Name") == selected_product).sum())["Sales"].sum()
+product_sales = df_main.groupby('Product Name')['Sales'].sum().loc[selected_product]
 
-Total_sales = df_main.get_column("Sales").sum()
+Total_sales = df_main["Sales"].sum()
 
 revenue_contribution = product_sales/Total_sales
 
 
-product_profit = df_main.group_by("Product Name").agg(pl.col("Gross Profit").filter(pl.col("Product Name") == selected_product).sum())["Gross Profit"].sum()
+product_profit = df_main.groupby('Product Name')['Sales'].sum().loc[selected_product]
 
 
 profit_contribution = product_profit/Total_sales
