@@ -17,7 +17,6 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 import altair as alt
-import plotly as plt
 import plotly.express as px
 import matplotlib.pyplot as mtpltlb
 import plotly.graph_objects as go
