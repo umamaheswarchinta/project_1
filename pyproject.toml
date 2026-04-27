@@ -10,5 +10,5 @@ dependencies = [
     "streamlit>=1.44.2",
     "yfinance>=0.2.55",
     "cffi==1.17.1",
-    "polars==1.40.1"
+
 ]
