@@ -173,9 +173,7 @@ with right_cell:
         y='Gross Profit'
         )
 
-        # 3. Render in Streamlit
-        
-        st.plotly_chart(fig)
+    
 
 
 
