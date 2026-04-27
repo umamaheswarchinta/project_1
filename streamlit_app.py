@@ -183,7 +183,7 @@ with right_cell:
 
         def create_pareto(df, x_col, y_col):
         # Sort data for Pareto (descending)
-            df = df.to_pandas().sort_values(y_col, ascending=False)
+            df = df.sort_values(y_col, ascending=False)
             df['cumulative_percent'] = df[y_col].cumsum() / df[y_col].sum()
 
             base = alt.Chart(df).encode(
